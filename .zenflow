@@ -9,3 +9,5 @@ remote: origin
 release_branch: false
 staging_branch: staging
 merge_strategy: merge
+skip_push_branch_on_start: false
+skip_version_and_changelog: false

@@ -23,7 +23,7 @@ module Zenflow
                 Zenflow::Branch.update(branch(:source))
                 Zenflow::Branch.create("#{flow}/#{branch_name}", branch(:source))
                 unless Zenflow::Config[:merge_strategy] == 'rebase'
-                  Zenflow::Branch.push("#{flow}/#{branch_name}")
+                  Zenflow::Branch.push("#{flow}/#{branch_name}") unless Zenflow::Config[:skip_push_branch_on_start]
                   Zenflow::Branch.track("#{flow}/#{branch_name}")
                 end
               else
